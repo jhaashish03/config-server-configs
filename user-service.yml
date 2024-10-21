@@ -1,0 +1,60 @@
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [requestId: %X{X-Request-Id}] %msg%n"
+
+info:
+  developerName: "Ashish Jha"
+  applicationEnv: "Default"
+
+spring:
+
+
+
+  datasource:
+    username: "{cipher}f6100881a4e8b57e809777fa27cd822e2644d7ff87cc5199c4647871bde996d6"
+    password: "{cipher}27e24e05797b37a7220922a9bf5ce8b4e27c21b95e08fa8bcf28585638cbeb2d"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/user_service
+
+
+server:
+  port: 7071
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+    refresh:
+      enabled: true
+  info:
+    environment: "Local"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+java:
+  mail:
+    sender:
+      user:
+        name: "{cipher}2284ceb35601d4dd4f45c18ebe40ca105697f5c467ca9e3c517617da14cc69e0c6eb7c05c7977e16be6af4f8ba749be7"
+        password: "{cipher}417be731cd3564265e20f7dad76afaebb0a0f25608f02f6c23aca5ed47d985580c697e586a3e2e996b3a938dce56416d"
+      from:
+        email:
+          address: "{cipher}e9dd0ac69928cd76d3421de0a2ec513e535aa63d2a666b3ea5ec76fb949afb8028c29f1c80626e250bb4e8225c9865d0"
