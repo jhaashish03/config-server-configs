@@ -1,0 +1,50 @@
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - [requestId: %X{X-Request-Id}] %msg%n"
+
+info:
+  developerName: "Ashish Jha"
+  applicationEnv: "Default"
+
+spring:
+
+
+
+
+
+
+server:
+  port: 8082
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      probes:
+        enabled: true
+    refresh:
+      enabled: true
+  info:
+    environment: "Local"
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+razorpay:
+  merchant-id: "{cipher}221e99dd660ae40dbf931e3d75bd83d60937b891fb7c056a3d0f3d325d78c6b1b7c99cf8d0102a9d5da32c4bce960039"
+  merchant-secret: "{cipher}621205c5691f8c8941ad640e782e028a44ceaef7b0e43f360405af521bd27738c78f5d76ddb2bc376980f5c2da2afe89"
